@@ -120,7 +120,7 @@ with col1:
 
 # -------- GPU INFERENCE BUTTON --------
 with col2:
-    if st.button("🎮 Run GPU Inference", use_container_width=True):
+    if st.button(" Run GPU Inference", use_container_width=True):
         with st.spinner("Loading GPU results..."):
             gpu_data = load_gpu_results()
             
@@ -422,3 +422,4 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
