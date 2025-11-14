@@ -1,0 +1,71 @@
+{
+  "device": "GPU",
+  "overall_accuracy": 0.8897183576518494,
+  "per_class_accuracy": {
+    "Walking": 0.9737903225806451,
+    "Walking Upstairs": 0.9447983014861996,
+    "Walking Downstairs": 0.7428571428571429,
+    "Sitting": 0.7983706720977597,
+    "Standing": 0.9135338345864662,
+    "Laying": 0.9385474860335196
+  },
+  "confusion_matrix": [
+    [
+      483,
+      0,
+      13,
+      0,
+      0,
+      0
+    ],
+    [
+      22,
+      445,
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      61,
+      47,
+      312,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      392,
+      96,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      46,
+      486,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      30,
+      3,
+      504
+    ]
+  ],
+  "model_load_time": 0.48905372619628906,
+  "inference_time": 0.01788330078125,
+  "total_time": 0.5069370269775391,
+  "test_samples": 2947,
+  "n_features": 561,
+  "pca_components": 50,
+  "train_accuracy": 1.0,
+  "test_accuracy": 0.8897183576518494,
+  "explained_variance": 0.8751836358316628
+}
