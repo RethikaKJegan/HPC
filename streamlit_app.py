@@ -368,20 +368,18 @@ if st.session_state.cpu_executed and st.session_state.gpu_executed:
             "Overall Accuracy",
             "Inference Time",
             "Model Load Time",
-            "GPU Speedup",
-            "Time Saved"
+            "GPU Speedup"
         ],
         "CPU": [
             f"{cpu['overall_accuracy']*100:.2f}%",
             f"{cpu['inference_time']:.5f}s",
-            "1.00x (baseline)",
-            "0.0000s (baseline)"
+            "1.00x (baseline)"
+            
         ],
         "GPU": [
             f"{gpu['overall_accuracy']*100:.2f}%",
             f"{gpu['inference_time']:.5f}s",
-            f"{speedup:.2f}x",
-            f"{time_saved:.5f}s"
+            f"{speedup:.2f}x"
         ]
     }
     
@@ -420,6 +418,7 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
