@@ -44,5 +44,4 @@ if st.button("Run CPU Inference"):
         class_acc = np.mean(preds[class_mask] == y_test[class_mask])
         st.write(f"**{lbl}:** {class_acc*100:.2f}%")
 
-st.info("Docker-based CPU and GPU inference works only on local machine. Cloud platform does not allow nested Docker, so CPU inference is done directly here.")
 
