@@ -35,17 +35,7 @@ if st.button("Run CPU Inference"):
     st.write(f"**Inference Time:** {end - start:.5f} seconds")
     st.write(f"**Test Accuracy:** {model_data['test_accuracy']*100:.2f}%")
 
-    # Confusion matrix
-    from sklearn.metrics import confusion_matrix
-    cm = confusion_matrix(y_test, preds)
-
-    fig, ax = plt.subplots(figsize=(6, 4))
-    sns.heatmap(cm, annot=True, cmap="Blues", fmt="d",
-                xticklabels=labels.values(),
-                yticklabels=labels.values(),
-                ax=ax)
-    plt.title("Confusion Matrix (CPU Cloud)")
-    st.pyplot(fig)
+    
 
     # Per class accuracy
     st.subheader("Per-Class Accuracy:")
@@ -55,3 +45,4 @@ if st.button("Run CPU Inference"):
         st.write(f"**{lbl}:** {class_acc*100:.2f}%")
 
 st.info("Docker-based CPU and GPU inference works only on local machine. Cloud platform does not allow nested Docker, so CPU inference is done directly here.")
+
