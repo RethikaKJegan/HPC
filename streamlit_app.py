@@ -152,7 +152,7 @@ if st.session_state.cpu_executed and st.session_state.cpu_results:
     
     cpu = st.session_state.cpu_results
     
-    st.header(" CPU Results")
+    st.header(" CPU Results (Cloud)")
     
     # Metrics
     col1, col2, col3 = st.columns(3)
@@ -205,7 +205,7 @@ if st.session_state.cpu_executed and st.session_state.cpu_results:
     
     # Download button
     st.download_button(
-        label=" Download CPU Results (JSON)",
+        label="Download CPU Results (JSON)",
         data=json.dumps(cpu, indent=2),
         file_name="cpu_results.json",
         mime="application/json"
@@ -220,7 +220,7 @@ if st.session_state.gpu_executed and st.session_state.gpu_results:
     
     gpu = st.session_state.gpu_results
     
-    st.header(" GPU Results")
+    st.header("🎮 GPU Results (From Docker Container)")
     
     # Metrics
     col1, col2, col3 = st.columns(3)
@@ -368,18 +368,22 @@ if st.session_state.cpu_executed and st.session_state.gpu_executed:
             "Overall Accuracy",
             "Inference Time",
             "Model Load Time",
-            "GPU Speedup"
+            "GPU Speedup",
+            "Time Saved"
         ],
         "CPU": [
             f"{cpu['overall_accuracy']*100:.2f}%",
             f"{cpu['inference_time']:.5f}s",
-            "1.00x (baseline)"
-            
+            f"{cpu.get('model_load_time', 0):.5f}s",
+            "1.00x (baseline)",
+            "0.0000s (baseline)"
         ],
         "GPU": [
             f"{gpu['overall_accuracy']*100:.2f}%",
             f"{gpu['inference_time']:.5f}s",
-            f"{speedup:.2f}x"
+            f"{gpu.get('model_load_time', 0):.5f}s",
+            f"{speedup:.2f}x",
+            f"{time_saved:.5f}s"
         ]
     }
     
@@ -418,7 +422,3 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
-
-
-
-
