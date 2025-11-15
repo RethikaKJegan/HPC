@@ -152,7 +152,7 @@ if st.session_state.cpu_executed and st.session_state.cpu_results:
     
     cpu = st.session_state.cpu_results
     
-    st.header(" CPU Results (Cloud)")
+    st.header(" CPU Results")
     
     # Metrics
     col1, col2, col3 = st.columns(3)
@@ -220,7 +220,7 @@ if st.session_state.gpu_executed and st.session_state.gpu_results:
     
     gpu = st.session_state.gpu_results
     
-    st.header(" GPU Results (From Docker Container)")
+    st.header(" GPU Results")
     
     # Metrics
     col1, col2, col3 = st.columns(3)
@@ -422,4 +422,5 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
 
